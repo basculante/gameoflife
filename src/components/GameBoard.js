@@ -119,8 +119,9 @@ class GameBoard extends React.Component {
 		this.pause();
 	};
 
-	changeGridSize = () => {
-		this.setState({ columns: 20, rows: 20 });
+	handleGridChange = value => {
+		this.setState({ columns: value, rows: value });
+		
 	};
 
 	// Switch button btw start and stop
@@ -151,7 +152,7 @@ class GameBoard extends React.Component {
 					<div className="control">
 						<ButtonGroup>
 							<Button onClick={() => this.nextTick()}>
-								Next
+								Tick
 								<Icon className="control-icon" type="fast-forward" />
 							</Button>
 							<Button onClick={() => this.initial()}>
@@ -174,10 +175,13 @@ class GameBoard extends React.Component {
 						setSingleGrid={this.setSingleGrid}
 					/>
 				</Row>
+				<div style={{ color: "white", paddingTop: "10px", fontSize: "2.5vh" }}>
+					Ticks: {tick}
+				</div>
 				<Row type="flex" justify="center">
 					<Col xs={16}>
 						<div className="icon-wrapper">
-							<Icon type="plus-circle" />
+							<Icon type="minus-circle" />
 							<Slider
 								min={100}
 								max={2000}
@@ -186,18 +190,28 @@ class GameBoard extends React.Component {
 								tooltipVisible={false}
 								onChange={this.handleSpeedChange}
 							/>
-							<Icon type="minus-circle" />
-							Speed
+							<Icon type="plus-circle" />
+							Refresh Interval
 						</div>
 					</Col>
 				</Row>
-				<p>Ticks: {tick}</p>
-				<Input
-					placeholder="Number of Rows & Columns"
-					value={this.state.textValue}
-					onChange={this.handleChange}
-				/>
-				<button onClick={this.changeGridSize}>Enter</button>
+				<Row type="flex" justify="center">
+					<Col xs={16}>
+						<div className="icon-wrapper">
+							<Icon type="minus-circle" />
+							<Slider
+								min={10}
+								max={70}
+								defaultValue={this.state.rows}
+								step={5}
+								tooltipVisible={false}
+								onChange={this.handleGridChange}
+							/>
+							<Icon type="plus-circle" />
+							Grid Size
+						</div>
+					</Col>
+				</Row>
 			</div>
 		);
 	}

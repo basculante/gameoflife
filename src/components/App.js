@@ -4,8 +4,8 @@ import GameBoard from "./GameBoard";
 class App extends React.Component {
 	render() {
 		return (
-			<div>
-				<h1>Game Of Life</h1>
+			<div className="app">
+				<h1 className="app-title">CONWAY'S GAME OF LIFE</h1>
 				<GameBoard />
 			</div>
 		);

@@ -1,18 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
+
 body {
 	margin: 0;
 	padding: 0;
 	font-family: sans-serif;
-	display: flex;
-	justify-content: center;
+
+	background-image: 
+		url("./components/images/background.png");
 }
 
 * {
 	box-sizing: border-box;
 }
 
-h1 {
+.app-title {
 	text-align: center;
 	padding-top: 20px;
+	font-family: 'Orbitron', sans-serif;
+	color: white;
+
+}
+
+.app {
+	margin: 0;
 }
 
 /*Single Grid Boxes*/
@@ -26,19 +36,20 @@ h1 {
 }
 
 .Box:hover {
-	background-color: greenyellow;
+	background-color: #f79e02;
 }
 
 .Box.isActive {
-	background-color: #61dafb;
+	background-color: #f79e02;
 }
 
 .Grid {
 	width: 150px;
 	line-height: 0;
 	margin: auto;
-	box-shadow: 0px 0px 20px white;
+	box-shadow: 0px 0px 8px grey;
 	margin-top: 20px;
+	background-color: #03304d;
 }
 
 /*Control Icons*/
@@ -48,28 +59,37 @@ h1 {
 
 /* Range Slider Wrapper and Icons */
 .icon-wrapper {
-  position: relative;
-  padding: 0px 30px;
+	position: relative;
+	padding: 0px 30px;
+	padding-top: 10px;
+	width: 300px;
+	display: inline-block;
+	color: white;
 }
 
 .icon-wrapper .anticon {
-  position: absolute;
-  top: -2px;
-  width: 16px;
-  height: 16px;
-  line-height: 1;
-  font-size: 16px;
-  color: rgba(0, 0, 0, 0.25);
+	position: absolute;
+	top: 22px;
+	width: 16px;
+	height: 16px;
+	line-height: 1;
+	font-size: 15px;
+	color: white;
 }
 
 .icon-wrapper .anticon:first-child {
-  left: 0;
+	left: 0;
 }
 
 .icon-wrapper .anticon:last-child {
-  right: 0;
+	right: 0;
 }
 
 .control {
 	text-align: center;
+}
+
+.ticks-tile {
+	margin-top: 20px;
+	color: white;
 }
