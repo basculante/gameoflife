@@ -1,13 +1,75 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	display: flex;
+	justify-content: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+* {
+	box-sizing: border-box;
+}
+
+h1 {
+	text-align: center;
+	padding-top: 20px;
+}
+
+/*Single Grid Boxes*/
+.Box {
+	display: inline-block;
+	border: 1px solid black;
+	width: 15px;
+	height: 15px;
+	margin-left: -1px;
+	margin-bottom: -1px;
+}
+
+.Box:hover {
+	background-color: greenyellow;
+}
+
+.Box.isActive {
+	background-color: #61dafb;
+}
+
+.Grid {
+	width: 150px;
+	line-height: 0;
+	margin: auto;
+	box-shadow: 0px 0px 20px white;
+	margin-top: 20px;
+}
+
+/*Control Icons*/
+.control-icon {
+	margin: 10px;
+}
+
+/* Range Slider Wrapper and Icons */
+.icon-wrapper {
+  position: relative;
+  padding: 0px 30px;
+}
+
+.icon-wrapper .anticon {
+  position: absolute;
+  top: -2px;
+  width: 16px;
+  height: 16px;
+  line-height: 1;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.25);
+}
+
+.icon-wrapper .anticon:first-child {
+  left: 0;
+}
+
+.icon-wrapper .anticon:last-child {
+  right: 0;
+}
+
+.control {
+	text-align: center;
 }
