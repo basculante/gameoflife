@@ -1,117 +1,118 @@
 @import url("https://fonts.googleapis.com/css?family=Orbitron&display=swap");
 
 body {
-	margin: 0;
-	padding: 0;
-	font-family: sans-serif;
-	background-image: url("./components/images/background2.png");
-	height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-image: url("./components/images/background2.png");
+  height: 100vh;
 }
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /*App Title (Game of Life)*/
 .app-title {
-	text-align: center;
-	padding: 40px 0px 20px 0px;
-	font-family: "Orbitron", sans-serif;
-	color: white;
+  text-align: center;
+  padding: 40px 0px 20px 0px;
+  font-family: "Orbitron", sans-serif;
+  color: white;
 }
 
 /*Single Grid Boxes*/
 .Box {
-	display: inline-block;
-	border: 1px solid black;
-	width: 20px;
-	height: 20px;
-	margin-left: -1px;
-	margin-bottom: -1px;
-	transition: transform 0.2s; /*Zoom on hover animation*/
+  display: inline-block;
+  border: 1px solid black;
+  width: 20px;
+  height: 20px;
+  margin-left: -1px;
+  margin-bottom: -1px;
+  transition: transform 0.2s; /*Zoom on hover animation*/
 }
 
 .Box:hover {
-	background-color: #f79e02;
-	transform: scale(1.5); /*Zoom on hover*/
+  background-color: #f79e02;
+  transform: scale(1.5); /*Zoom on hover*/
 }
 
 .Box.isActive {
-	background-color: #f79e02; /*Switch box color on click*/
+  background-color: #f79e02; /*Switch box color on click*/
 }
 
 /*Grid*/
 .Grid {
-	width: 150px;
-	line-height: 0;
-	margin: auto;
-	box-shadow: 0px 0px 8px grey;
-	margin-top: 20px;
-	background-color: #03304d;
+  width: 150px;
+  line-height: 0;
+  margin: auto;
+  box-shadow: 0px 0px 8px grey;
+  margin-top: 20px;
+  background-color: #03304d;
 }
 
 /*Gameboard*/
 .gameboard {
-	text-align: center;
-	margin-bottom: 50px;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 /*Control Button Icons*/
 .control-icon {
-	margin: 10px;
+  margin: 10px;
 }
 
 /* Range Slider Wrapper and Icons */
 .icon-wrapper {
-	position: relative;
-	padding: 0px 30px;
-	padding-top: 10px;
-	width: 300px;
-	display: inline-block;
-	color: white;
+  position: relative;
+  padding: 0px 30px;
+  padding-top: 10px;
+  width: 300px;
+  display: inline-block;
+  color: white;
 }
 
 .icon-wrapper .anticon {
-	position: absolute;
-	top: 22px;
-	width: 16px;
-	height: 16px;
-	line-height: 1;
-	font-size: 15px;
-	color: white;
+  position: absolute;
+  top: 22px;
+  width: 16px;
+  height: 16px;
+  line-height: 1;
+  font-size: 15px;
+  color: white;
 }
 
 .icon-wrapper .anticon:first-child {
-	left: 0;
+  left: 0;
 }
 
 .icon-wrapper .anticon:last-child {
-	right: 0;
+  right: 0;
 }
 
 /* Explanation Section */
 .explanation-container {
-	text-align: center;
+  text-align: center;
 }
 
 .explanation-content {
-	background-image: url("./components/images/background.png");
-	width: 100%;
+  background-image: url("./components/images/background.png");
+  width: 100%;
+  font-size: 3vh;
 }
 
 .explanation-content-image {
-	max-width: 70%;
-	height: auto;
-	width: 50%;
-	padding: 10px;
+  max-width: 70%;
+  height: auto;
+  width: 50%;
+  padding: 10px;
 }
 
 .explanation-content-text {
-	display: inline-block;
-	text-align: left;
-	max-width: 100%;
-	width: 50%;
-	height: auto;
-	padding-top: 30px;
-	padding-bottom: 40px;
+  display: inline-block;
+  text-align: left;
+  max-width: 100%;
+  width: 50%;
+  height: auto;
+  padding-top: 30px;
+  padding-bottom: 40px;
 }
