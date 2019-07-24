@@ -114,7 +114,7 @@ class GameBoard extends React.Component {
     this.setState({ grid });
   };
 
-  // handle text input change
+  // handle speed input change
   handleSpeedChange = value => {
     this.setState({ refreshSpeed: value });
     this.pause();
