@@ -2,7 +2,7 @@ import React from "react";
 
 class Grid extends React.Component {
 	render() {
-		const { grid, setSingleGrid } = this.props;
+		const { grid, setSingleGrid, columns } = this.props;
 		let display = grid.map((row, j) =>
 			row.map((col, i) => (
 				<div
@@ -17,7 +17,7 @@ class Grid extends React.Component {
 			<div
 				className="Grid"
 				style={{
-					width: this.props.columns * 14
+					width: columns * 19
 				}}
 			>
 				{display}

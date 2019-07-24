@@ -1,48 +1,46 @@
-@import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Orbitron&display=swap");
 
 body {
 	margin: 0;
 	padding: 0;
 	font-family: sans-serif;
-
-	background-image: 
-		url("./components/images/background.png");
+	background-image: url("./components/images/background2.png");
+	height: 100vh;
 }
 
 * {
 	box-sizing: border-box;
 }
 
+/*App Title (Game of Life)*/
 .app-title {
 	text-align: center;
-	padding-top: 20px;
-	font-family: 'Orbitron', sans-serif;
+	padding: 40px 0px 20px 0px;
+	font-family: "Orbitron", sans-serif;
 	color: white;
-
-}
-
-.app {
-	margin: 0;
 }
 
 /*Single Grid Boxes*/
 .Box {
 	display: inline-block;
 	border: 1px solid black;
-	width: 15px;
-	height: 15px;
+	width: 20px;
+	height: 20px;
 	margin-left: -1px;
 	margin-bottom: -1px;
+	transition: transform 0.2s; /*Zoom on hover animation*/
 }
 
 .Box:hover {
 	background-color: #f79e02;
+	transform: scale(1.5); /*Zoom on hover*/
 }
 
 .Box.isActive {
-	background-color: #f79e02;
+	background-color: #f79e02; /*Switch box color on click*/
 }
 
+/*Grid*/
 .Grid {
 	width: 150px;
 	line-height: 0;
@@ -52,7 +50,13 @@ body {
 	background-color: #03304d;
 }
 
-/*Control Icons*/
+/*Gameboard*/
+.gameboard {
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+/*Control Button Icons*/
 .control-icon {
 	margin: 10px;
 }
@@ -85,11 +89,29 @@ body {
 	right: 0;
 }
 
-.control {
+/* Explanation Section */
+.explanation-container {
 	text-align: center;
 }
 
-.ticks-tile {
-	margin-top: 20px;
-	color: white;
+.explanation-content {
+	background-image: url("./components/images/background.png");
+	width: 100%;
+}
+
+.explanation-content-image {
+	max-width: 70%;
+	height: auto;
+	width: 50%;
+	padding: 10px;
+}
+
+.explanation-content-text {
+	display: inline-block;
+	text-align: left;
+	max-width: 100%;
+	width: 50%;
+	height: auto;
+	padding-top: 30px;
+	padding-bottom: 40px;
 }

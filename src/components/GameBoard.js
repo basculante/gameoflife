@@ -1,6 +1,6 @@
 import React from "react";
 import Grid from "./Grid";
-import { Row, Col, Button, Input, Slider, Icon } from "antd";
+import { Row, Col, Button, Slider, Icon } from "antd";
 
 class GameBoard extends React.Component {
 	state = {
@@ -9,11 +9,11 @@ class GameBoard extends React.Component {
 		columns: 30, // Number of Columns
 		refresh: 0, //
 		tick: 0, // Number of birth/death refreshes
-		refreshSpeed: 500,
-		started: false
+		refreshSpeed: 1000,
+		started: false // Check to see if game is running
 	};
 
-	// Load with grid of value 0
+	// Load with grid of value 0s
 	componentDidMount() {
 		this.reset();
 	}
@@ -53,6 +53,7 @@ class GameBoard extends React.Component {
 		this.setState({ grid: nextTick, tick: tick + 1 }); // Set grid as new Tick and increase tick value
 	};
 
+	// Count total value of adjacent grids
 	adjacent(grid, x, y) {
 		const { rows, columns } = this.state;
 		let totalAdj = 0;
@@ -119,11 +120,6 @@ class GameBoard extends React.Component {
 		this.pause();
 	};
 
-	handleGridChange = value => {
-		this.setState({ columns: value, rows: value });
-		
-	};
-
 	// Switch button btw start and stop
 	renderStartStopButton() {
 		if (!this.state.started) {
@@ -146,20 +142,21 @@ class GameBoard extends React.Component {
 	render() {
 		const { grid, rows, columns, tick } = this.state;
 		const ButtonGroup = Button.Group;
+		console.log(grid);
 		return (
-			<div style={{ textAlign: "center" }}>
+			<div className="gameboard">
 				<Row type="flex" justify="center">
 					<div className="control">
 						<ButtonGroup>
-							<Button onClick={() => this.nextTick()}>
-								Tick
-								<Icon className="control-icon" type="fast-forward" />
-							</Button>
 							<Button onClick={() => this.initial()}>
 								Seed
 								<Icon className="control-icon" type="build" />
 							</Button>
 							{this.renderStartStopButton()}
+							<Button onClick={() => this.nextTick()}>
+								Tick
+								<Icon className="control-icon" type="fast-forward" />
+							</Button>
 							<Button onClick={() => this.reset()}>
 								Clear
 								<Icon className="control-icon" type="table" />
@@ -183,32 +180,15 @@ class GameBoard extends React.Component {
 						<div className="icon-wrapper">
 							<Icon type="minus-circle" />
 							<Slider
-								min={100}
+								min={0}
 								max={2000}
 								defaultValue={this.state.refreshSpeed}
-								step={50}
+								step={20}
 								tooltipVisible={false}
 								onChange={this.handleSpeedChange}
 							/>
 							<Icon type="plus-circle" />
 							Refresh Interval
-						</div>
-					</Col>
-				</Row>
-				<Row type="flex" justify="center">
-					<Col xs={16}>
-						<div className="icon-wrapper">
-							<Icon type="minus-circle" />
-							<Slider
-								min={10}
-								max={70}
-								defaultValue={this.state.rows}
-								step={5}
-								tooltipVisible={false}
-								onChange={this.handleGridChange}
-							/>
-							<Icon type="plus-circle" />
-							Grid Size
 						</div>
 					</Col>
 				</Row>
