@@ -1,3 +1,3 @@
-##Conway's Game of Life
+## Conway's Game of Life
 
 Sample app for VG
